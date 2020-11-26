@@ -12,17 +12,17 @@ describe('toBe / toEqual', () => {
     const artist1 = {
       name: {
         first: 'Michael',
-        last: 'Jackson'
+        last: 'Jackson',
       },
-      songs: ['Beat It', 'Man in the Mirror']
+      songs: ['Beat It', 'Man in the Mirror'],
     };
 
     const artist2 = {
       name: {
         first: 'Michael',
-        last: 'Jackson'
+        last: 'Jackson',
       },
-      songs: ['Beat It', 'Man in the Mirror']
+      songs: ['Beat It', 'Man in the Mirror'],
     };
 
     it('객체인 경우 toBe는 참조 비교를 한다.', () => {
