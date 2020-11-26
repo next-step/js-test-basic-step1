@@ -1,25 +1,30 @@
 import { createCounter } from '../src/counter';
 
+let counter1;
+beforeEach(() => {
+  counter1 = createCounter();
+});
+
 // Step 1
 describe('옵션이 지정되지 않은 경우', () => {
   it('초기값은 0이다.', () => {
-
+    expect(counter1.val()).toEqual(0);
   });
 
   it('inc() 함수는 값을 1증가시킨다.', () => {
-
+    expect(counter1.inc().val()).toEqual(1);
   });
 
   it('dec() 함수는 값을 1감소시킨다.', () => {
-
+    expect(counter1.dec().val()).toEqual(-1);
   });
 
   it('isMax() 호출시 false를 반환한다.', () => {
-
+    expect(counter1.isMax()).toEqual(false);
   });
 
   it('isMin() 호출시 false를 반환한다.', () => {
-
+    expect(counter1.isMin()).toEqual(false);
   });
 });
 
