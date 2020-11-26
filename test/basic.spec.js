@@ -38,11 +38,12 @@ describe('toBe / toEqual', () => {
 
 describe('Math.round()', () => {
   it('소숫점 이하 값이 0.5 이상이면 올림 값을 반환한다', () => {
-
+    expect(Math.round(3.5)).toEqual(4);
+    expect(Math.round(3.6)).toEqual(4);
   });
 
   it('소숫점 이하 값이 0.5 미만이면 내림 값을 반환한다', () => {
-
+    expect(Math.round(3.4)).toEqual(3);
   });
 });
 
