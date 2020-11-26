@@ -1,21 +1,22 @@
-export function createCounter({ initValue, min, max } = {}) {
-  let val = initValue || 0;
+export function createCounter({ initValue = 0, min , max } = {}) {
 
-  return {
+  return Object.freeze({
     val() {
-      return val;
+      return initValue;
     },
     inc() {
-      return createCounter({ initValue: val + 1 });
+      const newValue = initValue + (max ? (initValue < max) * 1 : 1);
+      return createCounter({ initValue: newValue, min, max });
     },
     dec() {
-      return createCounter({ initValue: val - 1 });
+      const newValue = initValue - (min ? (initValue > min) * 1 : 1)
+      return createCounter({ initValue: newValue, min, max });
     },
     isMax() {
-      return val === max;
+      return initValue === max;
     },
     isMin() {
-      return val === min;
+      return initValue === min;
     },
-  };
+  });
 }
