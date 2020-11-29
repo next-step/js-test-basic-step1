@@ -3,30 +3,31 @@ import { createCounter } from "../src/counter";
 // Step 1
 describe("step 1", () => {
   describe("옵션이 지정되지 않은 경우", () => {
+    let counter;
+
+    beforeEach(() => {
+      counter = createCounter();
+    });
+
     it("초기값은 0이다.", () => {
-      const counter = createCounter();
       expect(counter.val()).toBe(0);
     });
 
     it("inc() 함수는 값을 1증가시킨다.", () => {
-      const counter = createCounter();
       counter.inc();
       expect(counter.val()).toBe(1);
     });
 
     it("dec() 함수는 값을 1감소시킨다.", () => {
-      const counter = createCounter();
       counter.dec();
       expect(counter.val()).toBe(-1);
     });
 
     it("isMax() 호출시 false를 반환한다.", () => {
-      const counter = createCounter();
       expect(counter.isMax()).toBe(false);
     });
 
     it("isMin() 호출시 false를 반환한다.", () => {
-      const counter = createCounter();
       expect(counter.isMin()).toBe(false);
     });
   });
