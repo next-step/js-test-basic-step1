@@ -5,11 +5,21 @@ export function createCounter() {
     val() {
       return this._value;
     },
+
     inc() {
       this._value++;
     },
+
     dec() {
       this._value--;
+    },
+
+    isMax() {
+      return false;
+    },
+
+    isMin() {
+      return false;
     },
   };
 }
