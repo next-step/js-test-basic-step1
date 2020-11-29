@@ -24,7 +24,7 @@ export function createCounter(options) {
     },
 
     isMin() {
-      return false;
+      return this._value === min;
     },
   };
 }
