@@ -23,7 +23,7 @@ export function createCounter(options) {
     },
 
     isMax() {
-      return false;
+      return this._value === max;
     },
 
     isMin() {
