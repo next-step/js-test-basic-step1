@@ -1,5 +1,6 @@
 export function createCounter(options) {
   const initValue = options?.initValue || 0;
+  const min = typeof options?.min === "number" ? options.min : -Infinity;
 
   return {
     _value: initValue,
@@ -13,7 +14,9 @@ export function createCounter(options) {
     },
 
     dec() {
-      this._value--;
+      if (this._value > min) {
+        this._value--;
+      }
     },
 
     isMax() {
