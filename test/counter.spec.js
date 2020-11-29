@@ -60,7 +60,7 @@ describe("step2", () => {
     it("inc() 함수를 호출해도 값이 증가하지 않는다.", () => {
       counter.inc();
       expect(counter.val()).toBe(MAX_VALUE);
-      expect(counter.val()).not.toBe(MIN_VALUE + 1);
+      expect(counter.val()).not.toBe(MAX_VALUE + 1);
     });
 
     it("isMax() 호출 시 true를 반환한다.", () => {
