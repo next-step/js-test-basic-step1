@@ -8,6 +8,8 @@ export function createCounter() {
     inc() {
       this._value++;
     },
-    dec() {},
+    dec() {
+      this._value--;
+    },
   };
 }
