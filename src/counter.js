@@ -1,6 +1,8 @@
-export function createCounter() {
+export function createCounter(options) {
+  const initValue = options?.initValue || 0;
+
   return {
-    _value: 0,
+    _value: initValue,
 
     val() {
       return this._value;
