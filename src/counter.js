@@ -5,7 +5,9 @@ export function createCounter() {
     val() {
       return this._value;
     },
-    inc() {},
+    inc() {
+      this._value++;
+    },
     dec() {},
   };
 }
