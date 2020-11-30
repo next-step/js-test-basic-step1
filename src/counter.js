@@ -1,33 +1,27 @@
-export function createCounter(options) {
-  const initValue = options?.initValue || 0;
-  const min = typeof options?.min === "number" ? options.min : -Infinity;
-  const max = typeof options?.max === "number" ? options.max : Infinity;
+export function createCounter(options = {}) {
+  const min = options.min ?? -Infinity;
+  const max = options.max ?? Infinity;
+  let value = options.initValue ?? 0;
 
   return {
-    _value: initValue,
-
     val() {
-      return this._value;
+      return value;
     },
 
     inc() {
-      if (this._value < max) {
-        this._value++;
-      }
+      if (value < max) value++;
     },
 
     dec() {
-      if (this._value > min) {
-        this._value--;
-      }
+      if (value > min) value--;
     },
 
     isMax() {
-      return this._value === max;
+      return value === max;
     },
 
     isMin() {
-      return this._value === min;
+      return value === min;
     },
   };
 }
