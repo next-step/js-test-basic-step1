@@ -42,7 +42,7 @@ it("initValue 옵션 사용 시 초기값이 해당 값으로 지정된다.", ()
 
 describe("min 옵션 사용 시 현재값과 min 값이 동일하면", () => {
   beforeEach(() => {
-    const value = 5;
+    const value = 0;
     counter = createCounter({ value, min: value });
   });
 
