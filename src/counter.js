@@ -1,7 +1,20 @@
 export function createCounter() {
+  let count = 0;
   return {
-    val() {},
-    inc() {},
-    dec() {}
+    val() {
+      return count;
+    },
+    inc() {
+      count++;
+    },
+    dec() {
+      count--;
+    },
+    isMax() {
+      return false;
+    },
+    isMin() {
+      return false;
+    }
   };
 }

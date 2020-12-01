@@ -2,15 +2,29 @@ import { createCounter } from '../src/counter';
 
 // Step 1
 describe('옵션이 지정되지 않은 경우', () => {
-  it('초기값은 0이다.', () => {});
+  const counter = createCounter();
 
-  it('inc() 함수는 값을 1증가시킨다.', () => {});
+  it('초기값은 0이다.', () => {
+    expect(counter.val()).toEqual(0);
+  });
 
-  it('dec() 함수는 값을 1감소시킨다.', () => {});
+  it('inc() 함수는 값을 1증가시킨다.', () => {
+    counter.inc();
+    expect(counter.val()).toEqual(1);
+  });
 
-  it('isMax() 호출시 false를 반환한다.', () => {});
+  it('dec() 함수는 값을 1감소시킨다.', () => {
+    counter.dec();
+    expect(counter.val()).toEqual(0);
+  });
 
-  it('isMin() 호출시 false를 반환한다.', () => {});
+  it('isMax() 호출시 false를 반환한다.', () => {
+    expect(counter.isMax()).toEqual(false);
+  });
+
+  it('isMin() 호출시 false를 반환한다.', () => {
+    expect(counter.isMin()).toEqual(false);
+  });
 });
 
 // Step 2
