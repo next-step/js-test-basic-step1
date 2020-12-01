@@ -28,16 +28,38 @@ describe('옵션이 지정되지 않은 경우', () => {
 });
 
 // Step 2
-it('initValue 옵션 사용 시 초기값이 해당 값으로 지정된다.', () => {});
+it('initValue 옵션 사용 시 초기값이 해당 값으로 지정된다.', () => {
+  const initVal = 10;
+  const counter = createCounter({ initVal });
+  expect(counter.val()).toEqual(initVal);
+});
 
 describe('min 옵션 사용 시 현재값과 min 값이 동일하면', () => {
-  it('dec() 함수를 호출해도 값이 감소하지 않는다.', () => {});
+  const min = -1;
+  const counter = createCounter({ min });
+  it('dec() 함수를 호출해도 값이 감소하지 않는다.', () => {
+    counter.dec();
+    expect(counter.val()).toEqual(min);
+    counter.dec();
+    expect(counter.val()).toEqual(min);
+  });
 
-  it('isMin() 호출 시 true를 반환한다.', () => {});
+  it('isMin() 호출 시 true를 반환한다.', () => {
+    expect(counter.isMin()).toEqual(true);
+  });
 });
 
 describe('max 옵션 사용 시 현재값과 max 값이 동일하면', () => {
-  it('inc() 함수를 호출해도 값이 증가하지 않는다.', () => {});
+  const max = 1;
+  const counter = createCounter({ max });
+  it('inc() 함수를 호출해도 값이 증가하지 않는다.', () => {
+    counter.inc();
+    expect(counter.val()).toEqual(max);
+    counter.inc();
+    expect(counter.val()).toEqual(max);
+  });
 
-  it('isMax() 호출 시 true를 반환한다.', () => {});
+  it('isMax() 호출 시 true를 반환한다.', () => {
+    expect(counter.isMax()).toEqual(true);
+  });
 });
