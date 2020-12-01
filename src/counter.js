@@ -1,18 +1,18 @@
-export function createCounter({ initVal = 0, min, max } = {}) {
+export function createCounter({
+  initVal = 0,
+  min = -Infinity,
+  max = Infinity
+} = {}) {
   let count = initVal;
   return {
     val() {
       return count;
     },
     inc() {
-      if (!max || count < max) {
-        count++;
-      }
+      max > count && count++;
     },
     dec() {
-      if (!min || count > min) {
-        count--;
-      }
+      min < count && count--;
     },
     isMax() {
       return count === max;
