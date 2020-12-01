@@ -1,7 +1,3 @@
-export function add() {
+export function add() {}
 
-}
-
-export function swap() {
-
-}
+export function swap() {}

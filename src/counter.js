@@ -1,13 +1,7 @@
 export function createCounter() {
   return {
-    val() {
-
-    },
-    inc() {
-
-    },
-    dec() {
-
-    }
+    val() {},
+    inc() {},
+    dec() {}
   };
 }
