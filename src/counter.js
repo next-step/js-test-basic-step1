@@ -1,4 +1,4 @@
-export function createCounter(initObject = {}) {
+export function createCounter({min, max, value} = {}) {
   let value = initObject.value ?? 0;
   const min = Number.isFinite(initObject.min) ? initObject.min : -Infinity;
   const max = Number.isFinite(initObject.max) ? initObject.max : Infinity;
